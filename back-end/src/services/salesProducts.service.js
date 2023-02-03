@@ -4,4 +4,4 @@ const AllSalesProducts = async () => {
     const salesProductsAll = await SalesProducts.findAll();
     return salesProductsAll;
 };
-module.exports = {AllSalesProducts};
+module.exports = { AllSalesProducts };
