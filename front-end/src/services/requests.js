@@ -15,7 +15,7 @@ export const requestLogin = async (email, password) => {
     password,
   });
 
-
+  // console.log('LOGIN', data);
   return data;
 };
 
