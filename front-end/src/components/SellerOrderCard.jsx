@@ -32,10 +32,17 @@ function SellerOrderCard({
     return result;
   };
 
+  const onclick = () => {
+    localStorage.setItem('saleId', JSON.stringify(
+      saleId,
+    ));
+    navigate(`/seller/orders/${saleId}`);
+  };
+
   return (
     <button
       type="button"
-      onClick={ () => navigate(`/seller/orders/${saleId}`) }
+      onClick={ onclick }
       // type="button"
       // hidden
       // aria-hidden="true"

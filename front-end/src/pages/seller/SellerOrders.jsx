@@ -26,7 +26,7 @@ function SellerOrders() {
     // };
     const fetchCustomerOrders = async () => {
       const { data } = await requestSalesData();
-      console.log(data);
+      // console.log(data);
       // console.log(data);
       // const orderByUserId = data.filter((order) => order.userId === value);
       // console.log(data.total_price);
@@ -43,7 +43,7 @@ function SellerOrders() {
     <>
       <NavBar />
       <div>
-        {console.log(customerOrder)}
+        {/* {console.log(customerOrder)} */}
         SELLER ORDER
 
         { customerOrder.map(({ id, userId, status }, index) => (

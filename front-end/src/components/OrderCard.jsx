@@ -32,10 +32,15 @@ function OrderCard({
     return result;
   };
 
+  const onClick = () => {
+    navigate(`/customer/orders/${saleId}`);
+    localStorage.setItem('saleId', saleId);
+  };
+
   return (
     <button
       type="button"
-      onClick={ () => navigate(`/customer/orders/${saleId}`) }
+      onClick={ onClick }
       // type="button"
       // hidden
       // aria-hidden="true"
