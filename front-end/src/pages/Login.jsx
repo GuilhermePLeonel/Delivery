@@ -1,7 +1,7 @@
 // import '../styles/login.css';
 import React, { useState, useEffect } from 'react';
 import validator from 'validator';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { requestLogin } from '../services/requests';
 
 function Login() {
@@ -11,6 +11,8 @@ function Login() {
   const [fieldsValidation, setFieldsValidation] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [Role, setRole] = useState('');
+  // const [redirect, setRedirect] = useState(false);
+
   const navigate = useNavigate();
 
   const login = async (event) => {
@@ -24,6 +26,17 @@ function Login() {
       ));
       setRole(role);
       setRedirect(true);
+
+      localStorage.setItem('user', JSON.stringify(
+        { email, name, role, token },
+      ));
+
+      if (role === 'seller') {
+        navigate('/seller/orders');
+      } else {
+        navigate('/customer/products');
+      }
+
     } catch (error) {
       setFailedTryLogin(true);
     }
@@ -46,11 +59,21 @@ function Login() {
     // if (localStorage.getItem('user')) {
     //   navigate('/customer/products');
     // }
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      if (user.role === 'seller') {
+        navigate('/seller/orders');
+      } else {
+        navigate('/customer/products');
+      }
+    }
+
     validateFields();
     setFailedTryLogin(false);
   }, [email, password]);
 
-  if (redirect) return <Navigate to="/customer/products" />;
+  // if (redirect) return <Navigate to="/customer/products" />;
 
   return (
     <div>

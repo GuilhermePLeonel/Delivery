@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment/moment';
 
-function OrderCard({
+function SellerOrderCard({
   saleId,
   order,
   status,
@@ -35,24 +35,23 @@ function OrderCard({
   return (
     <button
       type="button"
-      onClick={ () => navigate(`/customer/orders/${saleId}`) }
+      onClick={ () => navigate(`/seller/orders/${saleId}`) }
       // type="button"
       // hidden
       // aria-hidden="true"
-      data-testid={ `customer_orders__element-order-id-${saleId}` }
+      data-testid={ `seller_orders__element-order-id-${saleId}` }
       // Aria-hidden e Hidden - https://medium.com/htmlmoderno/voc%C3%AA-conhece-o-atributo-html-hidden-saiba-quando-utiliz%C3%A1-lo-614d1f531786#:~:text=Muitos%20n%C3%A3o%20utilizam%20ou%20desconhecem,browser%2C%20enquanto%20isso%2C%20elementos%20com
     >
       {`Pedido ${order}`}
-      <div className={ `order-status ${statusOrder}` }>
-        <div
-          data-testid={ `customer_orders__element-delivery-status-${saleId}` }
-        >
-          {status}
-        </div>
+      <div
+        className={ `order-status ${statusOrder}` }
+        data-testid={ `seller_orders__element-delivery-status-${saleId}` }
+      >
+        {status}
       </div>
       <ul>
         <li
-          data-testid={ `customer_orders__element-order-date-${saleId}` }
+          data-testid={ `seller_orders__element-order-date-${saleId}` }
         >
           {
             // console.log(saleDate)
@@ -64,7 +63,7 @@ function OrderCard({
           {' '}
           {' '}
           <span
-            data-testid={ `customer_orders__element-card-price-${saleId}` }
+            data-testid={ `seller_orders__element-card-price-${saleId}` }
           >
             {replaceValue(totalPrice)}
           </span>
@@ -74,7 +73,7 @@ function OrderCard({
   );
 }
 
-OrderCard.propTypes = {
+SellerOrderCard.propTypes = {
   saleId: PropTypes.number,
   order: PropTypes.string,
   status: PropTypes.string,
@@ -82,4 +81,4 @@ OrderCard.propTypes = {
   totalPrice: PropTypes.string,
 }.isRequired;
 
-export default OrderCard;
+export default SellerOrderCard;
