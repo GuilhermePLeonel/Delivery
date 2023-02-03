@@ -90,6 +90,7 @@ function SellerOrdersDetails() {
               disabled={ false }
               data-testid={ dataPreparing }
             >
+              {console.log}
               PREPARAR PEDIDO
               {' '}
             </button>
