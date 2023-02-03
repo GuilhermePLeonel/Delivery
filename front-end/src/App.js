@@ -7,8 +7,10 @@ import Products from './pages/customer/Products';
 import Checkout from './pages/customer/Checkout';
 import Orders from './pages/customer/Orders';
 import Details from './pages/customer/Details';
+import Admin from './pages/Admin';
 import SellerOrders from './pages/seller/SellerOrders';
 import SellerOrdersDetails from './pages/seller/SellerOrdersDetails';
+
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
       <Route path="/customer/checkout" element={ <Checkout /> } />
       <Route path="/customer/orders/:id" element={ <Details /> } />
       <Route path="/customer/orders" element={ <Orders /> } />
+      <Route path="/admin/manage" element={ <Admin /> } />
       <Route path="/seller/orders/:id" element={ <SellerOrdersDetails /> } />
       <Route path="/seller/orders" element={ <SellerOrders /> } />
+
     </Routes>
   );
 }

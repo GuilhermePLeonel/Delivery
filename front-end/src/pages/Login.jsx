@@ -9,7 +9,10 @@ function Login() {
   const [password, setPassword] = useState('');
   const [failedTryLogin, setFailedTryLogin] = useState(false);
   const [fieldsValidation, setFieldsValidation] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const [Role, setRole] = useState('');
   // const [redirect, setRedirect] = useState(false);
+
   const navigate = useNavigate();
 
   const login = async (event) => {
@@ -18,20 +21,27 @@ function Login() {
       const data = await requestLogin(email, password);
       const { name, role, token } = data;
       setFailedTryLogin(false);
-      // setRedirect(true);
       localStorage.setItem('user', JSON.stringify(
         { email, name, role, token },
       ));
-      console.log(role);
+      setRole(role);
+      setRedirect(true);
+
+      localStorage.setItem('user', JSON.stringify(
+        { email, name, role, token },
+      ));
+
       if (role === 'seller') {
         navigate('/seller/orders');
       } else {
         navigate('/customer/products');
       }
+
     } catch (error) {
       setFailedTryLogin(true);
     }
   };
+
   const validateFields = async () => {
     const six = 6;
     if (validator.isEmail(email) && password.length >= six) {
@@ -41,8 +51,15 @@ function Login() {
     }
   };
 
+  if (Role === 'administrator') {
+    navigate('/admin/manage');
+  }
+
   useEffect(() => {
-    console.log('UOU');
+    // if (localStorage.getItem('user')) {
+    //   navigate('/customer/products');
+    // }
+
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       if (user.role === 'seller') {
@@ -51,6 +68,7 @@ function Login() {
         navigate('/customer/products');
       }
     }
+
     validateFields();
     setFailedTryLogin(false);
   }, [email, password]);
