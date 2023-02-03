@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AdminNavBar() {
-  const { name } = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user'));
 
   return (
     <nav>
@@ -9,17 +9,17 @@ function AdminNavBar() {
         <li>
           <a
             href="/admin/manage"
-            data-testid="customer_products__element-navbar-link-orders"
+            data-testid="customer_products__element-navbar-link-products"
           >
             GERENCIAR USUÁRIOS
           </a>
         </li>
-
+        <li />
         <li>
           <p
             data-testid="customer_products__element-navbar-user-full-name"
           >
-            { name }
+            { user }
           </p>
         </li>
         <li>
