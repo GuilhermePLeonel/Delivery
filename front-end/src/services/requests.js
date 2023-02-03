@@ -14,8 +14,6 @@ export const requestLogin = async (email, password) => {
     email,
     password,
   });
-
-  // console.log('LOGIN', data);
   return data;
 };
 
@@ -71,6 +69,18 @@ export const requestSalesData = async () => {
   try {
     data = await axios.get(
       'http://localhost:3001/sales',
+    );
+    return data;
+  } catch (error) {
+    return { data, message: 'requisição falhou', status: 409 };
+  }
+};
+
+export const requestSalesProducts = async () => {
+  let data;
+  try {
+    data = await axios.get(
+      'http://localhost:3001/sales/products',
     );
     return data;
   } catch (error) {
