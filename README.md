@@ -1,4 +1,4 @@
-# Plataforma de Delivery de Cerveja 🍻
+# Delivery App🍻
 
 ## Sobre o Projeto
 
