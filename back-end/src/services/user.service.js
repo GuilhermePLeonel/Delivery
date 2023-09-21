@@ -27,15 +27,8 @@ const getUserById = async (userId) =>
     attributes: { exclude: ["password"] },
   });
 
-const getUserByRole = async (role) =>
-  User.findAll({
-    where: { role: role },
-    attributes: { exclude: ["password"] },
-  });
-
 module.exports = {
   createUser,
   getUserById,
   getUser,
-  getUserByRole,
 };

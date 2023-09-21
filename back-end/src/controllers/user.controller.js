@@ -55,25 +55,9 @@ const getUserById = async (req, res) => {
   return res.status(200).json(user[0]);
 };
 
-const getUserByRole = async (req, res) => {
-  const { authorization } = req.headers;
-  const { message } = await validateToken(authorization);
-
-  if (!authorization) {
-    return res.status(401).json({ message: "Token not found" });
-  }
-  if (message) {
-    return res.status(401).json({ message });
-  }
-  const user = await userService.getUserByRole();
-
-  return res.status(200).json(user);
-};
-
 module.exports = {
   createUser,
   getUser,
   getUserById,
   getUserByEmail,
-  getUserByRole,
 };
