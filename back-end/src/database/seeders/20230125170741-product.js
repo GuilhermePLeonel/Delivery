@@ -95,6 +95,47 @@ module.exports = {
           url_image:
             "http://localhost:3001/images/9afbbe33e63c6a4d0f8e19e1904a9dea.jpg",
         },
+        {
+          id: 15,
+          name: "Refrigerante Sprite Limão Original 2l",
+          price: 8.5,
+          url_image:
+            "http://localhost:3001/images/Refrigerante Sprite Limão Original 2l.jpeg",
+        },
+        {
+          id: 16,
+          name: "Refrigerante Sprite Limão Original Lata 350ml",
+          price: 5.0,
+          url_image:
+            "http://localhost:3001/images/Refrigerante Coca-Cola Lata 350ml.jpg",
+        },
+        {
+          id: 17,
+          name: "Refrigerante Coca-Cola 1,5L",
+          price: 10.75,
+          url_image:
+            "http://localhost:3001/images/Refrigerante Coca-Cola 1,5L.jpg",
+        },
+        {
+          id: 18,
+          name: "Refrigerante Coca-Cola Lata 350ml",
+          price: 4.25,
+          url_image:
+            "http://localhost:3001/images/Refrigerante Coca-Cola Lata 350ml.jpg",
+        },
+        {
+          id: 19,
+          name: "Água Tônica Antarctica Lata 350ml",
+          price: 3.75,
+          url_image:
+            "http://localhost:3001/images/Água Tônica Antarctica Lata 350ml.jpg",
+        },
+        {
+          id: 20,
+          name: "Vinho Gallioto Tinto Suave 1l",
+          price: 23.1,
+          url_image: "http://localhost:3001/images/galiotto-tinto-suave-1l.jpg",
+        },
       ],
       { timestamps: false }
     );

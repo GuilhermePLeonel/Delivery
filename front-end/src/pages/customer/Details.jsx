@@ -132,7 +132,7 @@ function Details() {
                 <th className="py-2 px-4 bg-yellow-500 text-white text-left">
                   Descrição
                 </th>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
+                <th className="py-2 px-4 bg-yellow-500 sm: text-white text-left">
                   Quantidade
                 </th>
                 <th className="py-2 px-4 bg-yellow-500 text-white text-left">

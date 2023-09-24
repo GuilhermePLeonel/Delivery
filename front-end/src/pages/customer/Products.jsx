@@ -43,8 +43,8 @@ function Products() {
       <section class="flex-grow  sm:mx-4  mt-40 sm:mt-32 md:mt-28">
         <img
           alt="imagem ilustrativa de promoção"
-          src="https://ze.delivery/_next/image?url=https%3A%2F%2Fcourier-images-web.imgix.net%2Fstatic%2Fimg%2Fze-reward-banner-tablet.webp%3Fauto%3Dcompress%2Cformat%26fit%3Dmax%26w%3Dundefined%26h%3Dundefined%26dpr%3D2&w=3840&q=75"
-          class="object-scale-down h-32 mb-10 w-full sm:h-60 md:h-96 lg:h-96"
+          src={require("../../images/TEMPLATE_CERTO.png")}
+          class="object-scale-down h-24 mb-10 w-full sm:h-60 md:h-60 "
         />
         <button
           type="submit"

@@ -56,8 +56,8 @@ function Login() {
   return (
     <main class=" absolute m-0 p-0 h-full w-full flex flex-col">
       <img
-        class="mx-auto h-14 w-auto mt-4 "
-        src={require("../images/logo192.png")}
+        class="mx-auto h-20 w-auto mt-4 "
+        src={require("../images/LOGO.png")}
         alt="logo"
       ></img>
       <section class="mt-8 sm:mx-auto sm:w-full sm:max-w-sm flex-grow">
