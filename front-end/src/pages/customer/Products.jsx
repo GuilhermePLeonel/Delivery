@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ProductCard from '../../components/ProductCard';
-import NavBar from '../../components/NavBar';
-import { requestProducts } from '../../services/requests';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ProductCard from "../../components/ProductCard";
+import NavBar from "../../components/NavBar";
+import { requestProducts } from "../../services/requests";
 
 function Products() {
-  const replaceValue = (string) => string.replace('.', ',');
+  const replaceValue = (string) => string.replace(".", ",");
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
@@ -15,7 +15,7 @@ function Products() {
       setProducts(AllProducts);
     };
     const att = async () => {
-      const storage = JSON.parse(localStorage.getItem('carrinho'));
+      const storage = JSON.parse(localStorage.getItem("carrinho"));
       if (storage) {
         setCart(storage);
       }
@@ -24,47 +24,73 @@ function Products() {
     fetchProducts();
   }, [setCart]);
 
-  const totalCart = cart.reduce((acc, curr) => acc + (curr.quantity * curr.unitPrice), 0);
+  const cartQuantiy = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+  const totalCart = cart.reduce(
+    (acc, curr) => acc + curr.quantity * curr.unitPrice,
+    0
+  );
 
   const navigate = useNavigate();
   function handleProductsClick() {
-    navigate('/customer/checkout');
+    navigate("/customer/checkout");
   }
 
   return (
-    <>
-      <NavBar />
-      <div>
-        <div>
-          <button
-            type="submit"
-            data-testid="customer_products__button-cart"
-            onClick={ handleProductsClick }
-            disabled={ totalCart === 0 }
+    <div class="flex flex-col">
+      <header>
+        <NavBar />
+      </header>
+      <section class="flex-grow  sm:mx-4  mt-40 sm:mt-32 md:mt-28">
+        <img
+          alt="imagem ilustrativa de promoção"
+          src="https://ze.delivery/_next/image?url=https%3A%2F%2Fcourier-images-web.imgix.net%2Fstatic%2Fimg%2Fze-reward-banner-tablet.webp%3Fauto%3Dcompress%2Cformat%26fit%3Dmax%26w%3Dundefined%26h%3Dundefined%26dpr%3D2&w=3840&q=75"
+          class="object-scale-down h-32 mb-10 w-full sm:h-60 md:h-96 lg:h-96"
+        />
+        <button
+          type="submit"
+          data-testid="customer_products__button-cart"
+          onClick={handleProductsClick}
+          disabled={totalCart === 0}
+          hidden={totalCart === 0}
+          className=" bg-yellow-500
+          animate-bounce
+           fixed bottom-2 text-white content-center font-bold  px-4 rounded-full h-14 
+              hover:scale-105 hover:bg-yellow-600 transition duration-300"
+        >
+          <img
+            class="h-8  w-8 inline-block mr-2"
+            alt="icone de carrinho"
+            src="https://cdn-icons-png.flaticon.com/512/4/4295.png"
+          />
+          R$
+          <span data-testid="customer_products__checkout-bottom-value ">
+            {replaceValue(totalCart.toFixed(2))}
+          </span>
+          <span
+            hidden={totalCart === 0}
+            class={`relative inline-flex rounded-full text-white-900 h-8 w-8 bg-zinc-700 ml-5 ${
+              totalCart === 0 ? "hidden" : ""
+            }`}
           >
-            Ver Carrinho: R$
-            <span
-              data-testid="customer_products__checkout-bottom-value"
-            >
-              {replaceValue(totalCart.toFixed(2)) }
-            </span>
-          </button>
-
-        </div>
-        <div>
-          { products.map((product) => (
+            <p class="w-full mt-1">{cartQuantiy}</p>
+            {/* <span class="animate-ping absolute inline-flex  h-full w-full rounded-full bg-zinc-700 opacity-75"></span> */}
+          </span>
+        </button>
+        <div class="grid grid-cols-1 mx-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {products.map((product) => (
             <ProductCard
-              key={ product.id }
-              id={ product.id }
-              name={ product.name }
-              price={ product.price }
-              urlImage={ product.url_image }
-              cart={ cart }
-              setCart={ setCart }
-            />)) }
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              urlImage={product.url_image}
+              cart={cart}
+              setCart={setCart}
+            />
+          ))}
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }
 

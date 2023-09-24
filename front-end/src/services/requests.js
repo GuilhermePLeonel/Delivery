@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: `http://localhost:${process.env.REACT_APP_API_PORT || '3001'}`,
+  baseURL: `http://localhost:${process.env.REACT_APP_API_PORT || "3001"}`,
 });
 
 export const requestData = async (endpoint) => {
@@ -10,7 +10,7 @@ export const requestData = async (endpoint) => {
 };
 
 export const requestLogin = async (email, password) => {
-  const { data } = await axios.post('http://localhost:3001/login', {
+  const { data } = await axios.post("http://localhost:3001/login", {
     email,
     password,
   });
@@ -20,15 +20,15 @@ export const requestLogin = async (email, password) => {
 export const requestCreate = async (body) => {
   let data;
   try {
-    data = await axios.post('http://localhost:3001/register', body);
+    data = await axios.post("http://localhost:3001/register", body);
     return data;
   } catch (error) {
-    return { data, message: 'usuario cadastrado', status: 409 };
+    return { data, message: "usuario cadastrado", status: 409 };
   }
 };
 
 export const requestProducts = async () => {
-  const { data } = await axios.get('http://localhost:3001/customer/products');
+  const { data } = await axios.get("http://localhost:3001/customer/products");
   return data;
 };
 
@@ -36,7 +36,7 @@ export const requestSalesID = async (token, body) => {
   let data;
   try {
     data = await axios.post(
-      'http://localhost:3001/sales',
+      "http://localhost:3001/sales",
       {
         userId: body.userId,
         totalPrice: body.totalPrice,
@@ -45,46 +45,75 @@ export const requestSalesID = async (token, body) => {
         dateTime: body.dateTime,
         sellerId: body.sellerId,
         saleInfos: body.saleInfos,
-
       },
-      { headers: { Authorization: token } },
+      { headers: { Authorization: token } }
     );
     return data;
   } catch (error) {
-    return { data, message: 'venda falhou', status: 409 };
+    return { data, message: "venda falhou", status: 409 };
   }
 };
 export const requestUserData = async () => {
   let data;
   try {
-    data = await axios.get('http://localhost:3001/register');
+    data = await axios.get("http://localhost:3001/register");
     return data;
   } catch (error) {
-    return { message: 'falou a requisição', status: 409 };
+    return { message: "requisição falhou", status: 409 };
   }
 };
 
 export const requestSalesData = async () => {
   let data;
   try {
-    data = await axios.get(
-      'http://localhost:3001/sales',
-    );
+    data = await axios.get("http://localhost:3001/sales");
     return data;
   } catch (error) {
-    return { data, message: 'requisição falhou', status: 409 };
+    return { data, message: "requisição falhou", status: 409 };
   }
 };
 
 export const requestSalesProducts = async () => {
   let data;
   try {
-    data = await axios.get(
-      'http://localhost:3001/sales/products',
-    );
+    data = await axios.get("http://localhost:3001/sales/products");
     return data;
   } catch (error) {
-    return { data, message: 'requisição falhou', status: 409 };
+    return { data, message: "requisição falhou", status: 409 };
+  }
+};
+
+export const requestRole = async (role) => {
+  let data;
+  try {
+    data = await axios.put("http://localhost:3001/role", role);
+    return data;
+  } catch (error) {
+    return { data, message: "requisição falhou", status: 409 };
+  }
+};
+
+// export const requestStatus = async (saleId) => {
+//   let data;
+//   try {
+//     const { data } = await axios.get(
+//       `http://localhost:3001/sales/status/${saleId}`
+//     );
+//     return data;
+//   } catch (error) {
+//     return { data, message: "requisição falhou", status: 409 };
+//   }
+// };
+
+export const requestStatusUpdate = async (saleId, status) => {
+  let data;
+  try {
+    data = await axios.put(`http://localhost:3001/sales/status/${saleId}`, {
+      status: status,
+    });
+    return data;
+  } catch (error) {
+    return { data, message: "requisição falhou", status: 409 };
   }
 };
 
