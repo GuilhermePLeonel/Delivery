@@ -8,6 +8,7 @@ import {
   requestSalesData,
   requestSalesProducts,
   requestProducts,
+  requestStatusUpdate,
 } from "../../services/requests";
 
 function SellerOrdersDetails() {
@@ -56,6 +57,12 @@ function SellerOrdersDetails() {
   const dataUnity = "seller_order_details__element-order-table-unit-price";
   const dataSub = "seller_order_details__element-order-table-sub-total";
 
+  const handleStatusUpdate = async (status) => {
+    const { data } = await requestStatusUpdate(saleId, status);
+    window.location.reload();
+    console.log(data);
+  };
+
   return (
     <>
       <SellerNavBar />
@@ -78,29 +85,34 @@ function SellerOrdersDetails() {
               className={`ml-4 ${
                 sale.status === "Pendente"
                   ? "bg-red-500"
-                  : sale.status === "A caminho"
+                  : sale.status === "Preparando"
                   ? "bg-orange-500"
+                  : sale.status === "Em Trânsito"
+                  ? "bg-blue-500"
                   : sale.status === "Entregue"
                   ? "bg-green-500"
                   : ""
               } text-white py-1 px-2 rounded-full`}
             >
+              {console.log(sale.status)}
               {sale.status}
             </span>
           </div>
           <button
             type="button"
-            disabled={false}
+            disabled={sale.status !== "Pendente"}
+            onClick={() => handleStatusUpdate("Preparando")}
             data-testid={dataPreparing}
-            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full disabled:bg-yellow-200 disabled:cursor-not-allowed"
           >
             PREPARAR PEDIDO
           </button>
           <button
             type="button"
-            disabled
+            disabled={sale.status !== "Preparando"}
+            onClick={() => handleStatusUpdate("Em Trânsito")}
             data-testid={dataSend}
-            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-not-allowed"
+            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full disabled:bg-yellow-200 disabled:cursor-not-allowed"
           >
             SAIU PARA ENTREGA
           </button>

@@ -27,34 +27,19 @@ const getAllSales = async (req, res) => {
   return res.status(201).json(result);
 };
 
-// const updateSales = async (req, res) => {
-//   const saleId = req.params.id;
-//   const newStatus = req.body.status;
-//   const update = await salesService.updateSales(saleId, newStatus);
-//   if (update.success) {
-//     return res.status(200).json(update);
-//   } else {
-//     return res.status(404).json(update);
-//   }
-// };
-
-// const getSaleStatusById = async (req, res) => {
-//   const saleId = req.params.id;
-//   const result = await salesService.getSaleStatusById(saleId);
-//   if (result.length === 0) {
-//     return res.status(404).json({
-//       message: "Sale does not exist",
-//     });
-//   }
-//   return res.status(200).json({
-//     saleId: saleId,
-//     status: result,
-//   });
-// };
+const updateSales = async (req, res) => {
+  const saleId = req.params.id;
+  const newStatus = req.body.status;
+  const update = await salesService.updateSales(saleId, newStatus);
+  if (update.success) {
+    return res.status(200).json(update);
+  } else {
+    return res.status(404).json(update);
+  }
+};
 
 module.exports = {
   createSales,
   getAllSales,
-  // updateSales,
-  // getSaleStatusById,
+  updateSales,
 };

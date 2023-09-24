@@ -6,6 +6,7 @@ import {
   requestUserData,
   requestSalesProducts,
   requestProducts,
+  requestStatusUpdate,
 } from "../../services/requests";
 
 function Details() {
@@ -44,11 +45,23 @@ function Details() {
   }, []);
 
   const sale = customerOrder.filter((sal) => sal.id === saleId)[0];
-  const seller = users.filter((sel) => sel.id === sale.sellerId)[0];
+
+  const sellerName = () => {
+    const seller = users.filter((sel) => sel.id === sale.sellerId)[0];
+    if (seller) {
+      return seller.name;
+    }
+  };
 
   const handleDateOfSale = (date) => {
     const result = moment(date).format("DD/MM/YYYY");
     return result;
+  };
+
+  const handleStatusUpdate = async (status) => {
+    const { data } = await requestStatusUpdate(saleId, status);
+    window.location.reload();
+    console.log(data);
   };
 
   const replaceValue = (string) => string.replace(".", ",");
@@ -80,9 +93,7 @@ function Details() {
             >
               PEDIDO {sale.id}
             </span>
-            <span className="ml-4">
-              {seller ? seller.name : <p>Loading ...</p>}
-            </span>
+            <span className="ml-4">{sellerName()}</span>
             <span data-testid={dataDate} className="ml-4">
               {handleDateOfSale(sale.sale_date)}
             </span>
@@ -91,8 +102,10 @@ function Details() {
               className={`ml-4 ${
                 sale.status === "Pendente"
                   ? "bg-red-500"
-                  : sale.status === "A caminho"
+                  : sale.status === "Preparando"
                   ? "bg-orange-500"
+                  : sale.status === "Em Trânsito"
+                  ? "bg-blue-500"
                   : sale.status === "Entregue"
                   ? "bg-green-500"
                   : ""
@@ -103,9 +116,10 @@ function Details() {
           </div>
           <button
             type="button"
-            disabled
+            disabled={sale.status !== "Em Trânsito"}
+            onClick={() => handleStatusUpdate("Entregue")}
             data-testid={dataDelivery}
-            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-not-allowed"
+            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full disabled:cursor-not-allowed"
           >
             MARCAR COMO ENTREGUE
           </button>

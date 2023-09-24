@@ -39,48 +39,33 @@ const createSales = async ({
   return "Passou na service";
 };
 
-// const updateSales = async (saleId, newStatus) => {
-//   try {
-//     const result = await Sales.update(
-//       { status: newStatus },
-//       {
-//         where: { id: saleId },
-//       }
-//     );
+const updateSales = async (saleId, newStatus) => {
+  try {
+    const result = await Sales.update(
+      { status: newStatus },
+      {
+        where: { id: saleId },
+      }
+    );
 
-//     if (result[0] === 1) {
-//       return {
-//         success: true,
-//         message: "Status da venda atualizado com sucesso.",
-//       };
-//     } else {
-//       return {
-//         success: false,
-//         message: "Venda não encontrada ou status não atualizado.",
-//       };
-//     }
-//   } catch (error) {
-//     console.error("Erro ao atualizar o status da venda:", error);
-//     return { success: false, message: "Erro ao atualizar o status da venda." };
-//   }
-// };
-
-// const getSaleStatusById = async (saleId) => {
-//   try {
-//     const result = await Sales.findOne({
-//       where: { id: saleId },
-//       attributes: ["status"],
-//     });
-
-//     return result.dataValues.status;
-//   } catch (error) {
-//     console.error("Erro ao buscar o status da venda:", error);
-//     return { success: false, message: "Erro ao buscar o status da venda." };
-//   }
-// };
+    if (result[0] === 1) {
+      return {
+        success: true,
+        message: "Status da venda atualizado com sucesso.",
+      };
+    } else {
+      return {
+        success: false,
+        message: "Venda não encontrada ou status não atualizado.",
+      };
+    }
+  } catch (error) {
+    console.error("Erro ao atualizar o status da venda:", error);
+    return { success: false, message: "Erro ao atualizar o status da venda." };
+  }
+};
 
 module.exports = {
   createSales,
-  // updateSales,
-  // getSaleStatusById,
+  updateSales,
 };
