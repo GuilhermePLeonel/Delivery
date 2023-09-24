@@ -1,10 +1,10 @@
-# Plataforma de Delivery de Cerveja 🍻
+# Plataforma de Delivery de Bebidas 🍻
 
 ## Sobre o Projeto
 
-Nessa aplicação, nosso grupo foi responsável por criar e integrar tanto o back-end quanto o front-end, criando uma plataforma de delivery de cerveja. O projeto não se limitou apenas à codificação, mas também envolveu trabalho em equipe, aprendizado e diversão!
+Nessa aplicação, nosso grupo foi responsável por criar e integrar tanto o back-end quanto o front-end, criando uma plataforma de delivery de Bebidas. O projeto não se limitou apenas à codificação, mas também envolveu trabalho em equipe, aprendizado e desenvolvimento!
 
-O app de delivery foi desenvolvido imaginando uma distribuidora de bebidas, que estava se informatizando. Anteriormente, o negócio era focado em um local específico da cidade, mas passou a receber uma quantidade massiva de encomendas de outros pontos, expandindo sua atuação via delivery, graças ao excelente preço das bebidas e ao atendimento da equipe de vendas.
+O app de delivery foi desenvolvido supondo uma distribuidora de bebidas que estava se informatizando. Anteriormente, o negócio era focado em um local específico da cidade, mas passou a receber uma quantidade massiva de encomendas de outros pontos, expandindo sua atuação via delivery, graças ao excelente preço das bebidas e ao atendimento da equipe de vendas.
 
 Agora, a distribuidora possui alguns pontos de venda na cidade para agilizar o atendimento nessas áreas. Cada ponto de venda possui uma pessoa vendedora responsável.
 
@@ -23,6 +23,13 @@ O desenvolvimento do projeto foi dividido em dois grupos:
 **Grupo 2 (Front-end):** Gelso Schwertz e Luna Alves foram responsáveis pelo front-end, incluindo a criação de páginas, estilizações, lógicas de inputs, botões e controle de estado.
 
 Ainda sim, houveram muitos momentos em que os dois grupos, em pair programming, implementaram linhas de código juntos tanto no front-end quanto no back-end, visando o aprendizado de cada indivíduo nas stacks que envolviam tanto back quanto front-end.
+
+## Implementações individuais
+
+Após a conclusão do curso, visando me manter atualizado e ainda aprendendo, continuei a aprimorar o projeto com funcionalidades e estilos com os quais me identificava mais e achava que poderiam agregar ao produto.
+Tive a oportunidade de consertar erros que haviam sido cometidos quando o projeto foi entregue, tornar a interface mais bonita e apresentavel, melhorar a comunicação entre o cliente e o código, buscando uma melhor
+experiência do usuário, tratar melhor erros e inconsistências que tornavam o codigo menos limpo, e continuo adcionando a cada dia novas modificações que melhorem o aplicativo e que possam demonstrar meu desenvolvimento
+.
 
 ## Stacks Utilizadas
 
