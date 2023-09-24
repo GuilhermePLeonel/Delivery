@@ -19,18 +19,28 @@ function Orders() {
     <>
       <NavBar />
       <div class=" sm:mx-4  mt-40 sm:mt-40 md:mt-28">
-        <h1 class="mb-10 p-2 font-semibold text-gray-700">MEUS PEDIDOS</h1>
-        {customerOrder.map(({ id, userId, status }, index) => (
-          <OrderCard
-            key={id}
-            saleId={id}
-            userId={userId}
-            order={`${index + 1}`}
-            status={status}
-            saleDate={customerOrder[index].sale_date}
-            totalPrice={customerOrder[index].total_price}
-          />
-        ))}
+        {customerOrder.length > 0 ? (
+          customerOrder.map(({ id, userId, status }, index) => (
+            <div>
+              <h1 class="mb-10 p-2 font-semibold text-gray-700">
+                MEUS PEDIDOS
+              </h1>
+              <OrderCard
+                key={id}
+                saleId={id}
+                userId={userId}
+                order={`${index + 1}`}
+                status={status}
+                saleDate={customerOrder[index].sale_date}
+                totalPrice={customerOrder[index].total_price}
+              />
+            </div>
+          ))
+        ) : (
+          <h1 class="p-10 text-center font-semibold text-gray-700">
+            VOCÊ NÃO TEM PEDIDOS AINDA
+          </h1>
+        )}
       </div>
     </>
   );

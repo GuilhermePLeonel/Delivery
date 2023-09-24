@@ -12,6 +12,7 @@ routers.use("/register", userRouter);
 routers.use("/customer/products", productsRouter);
 routers.use("/images", express.static(path.resolve("src/public")));
 routers.use("/sales", salesRouter);
+// routers.use("/sales/status", salesRouter);
 routers.use("/sales/products", salesProductsRouter);
 
 module.exports = routers;

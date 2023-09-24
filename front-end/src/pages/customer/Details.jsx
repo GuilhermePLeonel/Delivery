@@ -58,8 +58,8 @@ function Details() {
   const dataDate =
     "customer_order_details__element-order-details-label-order-date";
   const dataDelivery = "customer_order_details__button-delivery-check";
-  const dataSeller =
-    "customer_order_details__element-order-details-label-seller-name";
+  // const dataSeller =
+  //   "customer_order_details__element-order-details-label-seller-name";
   const dataNumber = "customer_order_details__element-order-table-item-number";
   const dataName = "customer_order_details__element-order-table-name";
   const dataQuantity = "customer_order_details__element-order-table-quantity";
@@ -80,7 +80,7 @@ function Details() {
             >
               PEDIDO {sale.id}
             </span>
-            <span data-testid={dataSeller} className="ml-4">
+            <span className="ml-4">
               {seller ? seller.name : <p>Loading ...</p>}
             </span>
             <span data-testid={dataDate} className="ml-4">
