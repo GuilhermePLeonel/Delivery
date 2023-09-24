@@ -88,6 +88,13 @@ module.exports = {
           price: 3.69,
           url_image: "http://localhost:3001/images/6f12b3bfb4.jpg",
         },
+        {
+          id: 14,
+          name: "Cerveja Schin 350Ml",
+          price: 2.99,
+          url_image:
+            "http://localhost:3001/images/9afbbe33e63c6a4d0f8e19e1904a9dea.jpg",
+        },
       ],
       { timestamps: false }
     );
