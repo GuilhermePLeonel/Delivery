@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Nessa aplicação, nosso grupo foi responsável por criar e integrar tanto o back-end quanto o front-end, criando uma plataforma de delivery de Bebidas. O projeto não se limitou apenas à codificação, mas também envolveu trabalho em equipe, aprendizado e desenvolvimento!
+Nessa aplicação, minha equipe foi responsável por criar e integrar tanto o back-end quanto o front-end, criando uma plataforma de delivery de Bebidas. O projeto não se limitou apenas à codificação, mas também envolveu trabalho em equipe, aprendizado e desenvolvimento!
 
 O app de delivery foi desenvolvido supondo uma distribuidora de bebidas que estava se informatizando. Anteriormente, o negócio era focado em um local específico da cidade, mas passou a receber uma quantidade massiva de encomendas de outros pontos, expandindo sua atuação via delivery, graças ao excelente preço das bebidas e ao atendimento da equipe de vendas.
 
@@ -16,13 +16,13 @@ Para substituir o antigo sistema baseado em planilhas, dona Tereza procurou noss
 
 ## Desenvolvimento e Equipe
 
-O desenvolvimento do projeto foi dividido em dois grupos:
+O desenvolvimento do projeto foi dividido em duas equipes:
 
-**Grupo 1 (Back-end):** Eu, Maykon Douglas e Luiz Barbosa, fomos responsáveis pelo back-end, incluindo a criação de endpoints, regras de negócio, criação de bancos de dados e suas co-relações.
+**Equipe 1 (Back-end):** Eu, Maykon Douglas e Luiz Barbosa, fomos responsáveis pelo back-end, incluindo a criação de endpoints, regras de negócio, criação de bancos de dados e suas co-relações.
 
-**Grupo 2 (Front-end):** Gelso Schwertz e Luna Alves foram responsáveis pelo front-end, incluindo a criação de páginas, estilizações, lógicas de inputs, botões e controle de estado.
+**Equipe 2 (Front-end):** Gelso Schwertz e Luna Alves foram responsáveis pelo front-end, incluindo a criação de páginas, estilizações, lógicas de inputs, botões e controle de estado.
 
-Ainda sim, houveram muitos momentos em que os dois grupos, em pair programming, implementaram linhas de código juntos tanto no front-end quanto no back-end, visando o aprendizado de cada indivíduo nas stacks que envolviam tanto back quanto front-end.
+Ainda sim, houveram muitos momentos em que as duas equipes, em pair programming, implementaram linhas de código juntos tanto no front-end quanto no back-end, visando o aprendizado de cada indivíduo nas stacks que envolviam tanto back quanto front-end.
 
 ## Implementações individuais
 
