@@ -93,18 +93,6 @@ export const requestRole = async (role) => {
   }
 };
 
-// export const requestStatus = async (saleId) => {
-//   let data;
-//   try {
-//     const { data } = await axios.get(
-//       `http://localhost:3001/sales/status/${saleId}`
-//     );
-//     return data;
-//   } catch (error) {
-//     return { data, message: "requisição falhou", status: 409 };
-//   }
-// };
-
 export const requestStatusUpdate = async (saleId, status) => {
   let data;
   try {

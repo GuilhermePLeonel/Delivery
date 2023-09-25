@@ -41,7 +41,7 @@ function Login() {
   };
 
   useEffect(() => {
-    // localStorage.clear();
+    localStorage.clear();
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       if (user.role === "seller") {
