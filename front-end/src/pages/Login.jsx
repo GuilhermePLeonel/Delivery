@@ -41,6 +41,7 @@ function Login() {
   };
 
   useEffect(() => {
+    // localStorage.clear();
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       if (user.role === "seller") {
@@ -56,8 +57,8 @@ function Login() {
   return (
     <main class=" absolute m-0 p-0 h-full w-full flex flex-col">
       <img
-        class="mx-auto h-14 w-auto mt-4 "
-        src="https://asset.brandfetch.io/idLUjftGpE/id3ssWp9D3.png?updated=1674220249738"
+        class="mx-auto h-20 w-auto mt-4 "
+        src={require("../images/LOGO.png")}
         alt="logo"
       ></img>
       <section class="mt-8 sm:mx-auto sm:w-full sm:max-w-sm flex-grow">
@@ -79,6 +80,7 @@ function Login() {
               onChange={({ target: { value } }) => setEmail(value)}
               data-testid="common_login__input-email"
               placeholder="E-mail"
+              autoComplete="on"
             />
           </label>
           <label

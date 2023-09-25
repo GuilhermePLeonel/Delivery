@@ -32,8 +32,8 @@ function SellerOrderCard({ saleId, order, status, saleDate, totalPrice }) {
   };
 
   return (
-    <div className="flex border-t border-gray-200 p-2 ">
-      <div className={`w-1/4 p-2 ${statusOrder}`}>
+    <div className="flex flex-col sm:flex-row border-t border-gray-200 p-2">
+      <div className={`w-1/4 p-2`}>
         <div className="font-semibold text-lg text-gray-800">
           {`Pedido ${order}`}
         </div>

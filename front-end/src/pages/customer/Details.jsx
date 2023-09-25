@@ -93,13 +93,13 @@ function Details() {
             >
               PEDIDO {sale.id}
             </span>
-            <span className="ml-4">{sellerName()}</span>
-            <span data-testid={dataDate} className="ml-4">
+            <span className="ml-4 font-semibold">{sellerName()}</span>
+            <span data-testid={dataDate} className="ml-4 font-semibold">
               {handleDateOfSale(sale.sale_date)}
             </span>
             <span
               data-testid={dataStats}
-              className={`ml-4 ${
+              className={`ml-4 font-bold ${
                 sale.status === "Pendente"
                   ? "bg-red-500"
                   : sale.status === "Preparando"
@@ -119,74 +119,76 @@ function Details() {
             disabled={sale.status !== "Em Trânsito"}
             onClick={() => handleStatusUpdate("Entregue")}
             data-testid={dataDelivery}
-            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full disabled:cursor-not-allowed"
+            className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full disabled:cursor-not-allowed disabled:bg-yellow-200"
           >
             MARCAR COMO ENTREGUE
           </button>
-          <table className="w-full mt-4 border-collapse rounded-lg overflow-hidden">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
-                  Item
-                </th>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
-                  Descrição
-                </th>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
-                  Quantidade
-                </th>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
-                  Valor Unitário
-                </th>
-                <th className="py-2 px-4 bg-yellow-500 text-white text-left">
-                  Sub-total
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {salesProducts
-                .filter((sal) => sal.saleId === saleId)
-                .map((product, index) => (
-                  <tr key={product.productId}>
-                    <td
-                      data-testid={`${dataNumber}-${index}`}
-                      className="py-2 px-4 bg-gray-100 text-left"
-                    >
-                      {index + 1}
-                    </td>
-                    <td
-                      data-testid={`${dataName}-${index}`}
-                      className="py-2 px-4 bg-gray-100 text-left"
-                    >
-                      {allProducts[product.productId - 1].name}
-                    </td>
-                    <td
-                      data-testid={`${dataQuantity}-${index}`}
-                      className="py-2 px-4 bg-gray-100 text-left"
-                    >
-                      {product.quantity}
-                    </td>
-                    <td
-                      data-testid={`${dataUnity}-${index}`}
-                      className="py-2 px-4 bg-gray-100 text-left"
-                    >
-                      {replaceValue(allProducts[product.productId - 1].price)}
-                    </td>
-                    <td
-                      data-testid={`${dataSub}-${index}`}
-                      className="py-2 px-4 bg-gray-100 text-left"
-                    >
-                      {replaceValue(
-                        (
-                          allProducts[product.productId - 1].price *
-                          product.quantity
-                        ).toFixed(2)
-                      )}
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <div class="relative overflow-x-auto">
+            <table className="mt-4 mb-6 border-collapse overflow-hidden rounded-lg">
+              <thead>
+                <tr>
+                  <th className="py-2 px-4   bg-yellow-500 text-white text-left">
+                    Item
+                  </th>
+                  <th className="py-2 px-4  bg-yellow-500  text-white text-left">
+                    Descrição
+                  </th>
+                  <th className="py-2 px-4   bg-yellow-500  text-white text-left">
+                    Quantidade
+                  </th>
+                  <th className="py-2 px-4  bg-yellow-500 text-white text-left">
+                    Valor Unitário
+                  </th>
+                  <th className="py-2 px-4  bg-yellow-500 text-white text-left">
+                    Sub-total
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {salesProducts
+                  .filter((sal) => sal.saleId === saleId)
+                  .map((product, index) => (
+                    <tr key={product.productId}>
+                      <td
+                        data-testid={`${dataNumber}-${index}`}
+                        className="py-2 px-4 font-semibold bg-gray-100 text-left"
+                      >
+                        {index + 1}
+                      </td>
+                      <td
+                        data-testid={`${dataName}-${index}`}
+                        className="py-2 px-4 font-semibold bg-gray-100 text-left"
+                      >
+                        {allProducts[product.productId - 1].name}
+                      </td>
+                      <td
+                        data-testid={`${dataQuantity}-${index}`}
+                        className="py-2 px-4 font-semibold bg-gray-100 text-left"
+                      >
+                        {product.quantity}
+                      </td>
+                      <td
+                        data-testid={`${dataUnity}-${index}`}
+                        className="py-2 px-4 font-semibold bg-gray-100 text-left"
+                      >
+                        {replaceValue(allProducts[product.productId - 1].price)}
+                      </td>
+                      <td
+                        data-testid={`${dataSub}-${index}`}
+                        className="py-2 px-4 font-semibold bg-gray-100 text-left"
+                      >
+                        {replaceValue(
+                          (
+                            allProducts[product.productId - 1].price *
+                            product.quantity
+                          ).toFixed(2)
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
           <div
             data-testid="customer_order_details__element-order-total-price"
             className="mt-4 font-semibold text-lg text-yellow-500"

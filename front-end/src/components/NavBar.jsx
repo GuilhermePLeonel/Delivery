@@ -11,7 +11,7 @@ function NavBar() {
       <div class="max-w-screen-xl flex items-center  justify-between  px-5 py-5 mx-auto sm:h-20 md:h-24 lg:h-30">
         <div class="flex items-start">
           <img
-            src="https://cdn.icon-icons.com/icons2/1161/PNG/512/1487716857-user_81635.png"
+            src={require("../images/icone.png")}
             class="h-11 w-auto mr-3 mt-1"
             alt="icone de usuario"
           />

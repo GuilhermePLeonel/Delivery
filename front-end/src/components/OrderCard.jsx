@@ -33,32 +33,32 @@ function OrderCard({ saleId, order, status, saleDate, totalPrice }) {
   };
 
   return (
-    <div className="flex border-t border-gray-200 p-2 ">
-      <div className={`w-1/4 p-2 `}>
+    <div className="flex flex-col sm:flex-row border-t border-gray-200 p-2">
+      <div className="sm:w-1/4 p-2">
         <div className="font-semibold text-lg text-gray-800">
           {`Pedido ${order}`}
         </div>
       </div>
-      <div className="w-1/4 p-2">
+      <div className="sm:w-1/4 p-2">
         <div className="text-gray-600 text-sm">Status</div>
         <div data-testid={`customer_orders__element-order-date-${saleId}`}>
           {status}
         </div>
       </div>
-      <div className="w-1/4 p-2">
+      <div className="sm:w-1/4 p-2">
         <div className="text-gray-600 text-sm">Data do Pedido</div>
         <div data-testid={`customer_orders__element-order-date-${saleId}`}>
           {handleDateOfSale(saleDate)}
         </div>
       </div>
-      <div className="w-1/4 p-2">
+      <div className="sm:w-1/4 p-2">
         <div className="text-gray-600 text-sm">Total</div>
         R$
         <span data-testid={`customer_orders__element-card-price-${saleId}`}>
           {replaceValue(totalPrice)}
         </span>
       </div>
-      <div className="w-1/4 p-2 flex justify-center items-center">
+      <div className="sm:w-1/4 py-2  sm:mt-5 md:mt-0 flex justify-start  items-center">
         <button
           type="button"
           onClick={onClick}
