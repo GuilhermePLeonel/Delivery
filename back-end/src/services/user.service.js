@@ -10,8 +10,8 @@ const createUser = async ({ name, email, password }) => {
   if (error) {
     return { message: error };
   }
-  await User.create({ name, email, password: hast });
-  return { token, name, email, role: null };
+  await User.create({ name, email, password: hast, role: "customer" });
+  return { token, name, email, role: "customer" };
 };
 
 const getUser = async () =>
