@@ -14,7 +14,7 @@ export default function Checkout() {
   return (
     <>
       <NavBar />
-      <div class="p-4 sm:mx-4  mt-40 sm:mt-32 md:mt-28">
+      <div class="p-4 sm:mx-4 mb-20 mt-40 sm:mt-32 md:mt-28">
         <section class="">
           <h3 className="text-xl font-semibold mb-4">
             Verifique os dados de entrega e produtos:

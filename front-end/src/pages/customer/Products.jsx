@@ -40,7 +40,7 @@ function Products() {
       <header>
         <NavBar />
       </header>
-      <section class="flex-grow  sm:mx-4  mt-40 sm:mt-32 md:mt-28">
+      <section class="flex-grow  sm:mx-4 mb-20 mt-40 sm:mt-32 md:mt-28">
         <img
           alt="imagem ilustrativa de promoção"
           src={require("../../images/TEMPLATE_CERTO.png")}

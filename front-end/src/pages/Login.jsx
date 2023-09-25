@@ -41,6 +41,7 @@ function Login() {
   };
 
   useEffect(() => {
+    // localStorage.clear();
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       if (user.role === "seller") {
@@ -79,6 +80,7 @@ function Login() {
               onChange={({ target: { value } }) => setEmail(value)}
               data-testid="common_login__input-email"
               placeholder="E-mail"
+              autoComplete="on"
             />
           </label>
           <label
