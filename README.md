@@ -14,8 +14,8 @@ Para substituir o antigo sistema baseado em planilhas, dona Tereza procurou noss
 - Fazer a comunicação entre clientes e pessoas vendedoras: a pessoa cliente faz o pedido via "carrinho de compras" e a pessoa vendedora aprova, prepara e envia esse pedido. Quando o produto é recebido por quem comprou, essa pessoa marca o pedido como "recebido". Ambos devem possuir detalhes sobre seus pedidos.
 - Garantir que o pedido do cliente apareça para a pessoa vendedora em seu dashboard de pedidos após a atualização da página. A pessoa cliente, por sua vez, deve ter as informações sobre seu pedido quando sua página for atualizada, ou seja, informações se o pedido está sendo preparado ou se já saiu para entrega.
   
-## Aparência 
-![Logo da Minha Aplicação]([https://github.com/guilherme](https://github.com/GuilhermePLeonel/Delivery-App/image%20eu.png))
+## Aparência da Aplicação
+![Logo da Minha Aplicação](https://github.com/GuilhermePLeonel/Delivery-App/blob/main/image-2%20(1).png)
 ## Desenvolvimento e Equipe
 
 O desenvolvimento do projeto foi dividido em duas equipes:
