@@ -49,7 +49,7 @@ experiência do usuário, tratar melhor erros e inconsistências que tornavam o 
 - JWT (JSON Web Tokens)
 - React Hooks
 - SQL
-- Joi
+- JOI
 
 ## Instruções de Uso
 
