@@ -15,7 +15,7 @@ Para substituir o antigo sistema baseado em planilhas, dona Tereza procurou noss
 - Garantir que o pedido do cliente apareça para a pessoa vendedora em seu dashboard de pedidos após a atualização da página. A pessoa cliente, por sua vez, deve ter as informações sobre seu pedido quando sua página for atualizada, ou seja, informações se o pedido está sendo preparado ou se já saiu para entrega.
   
 ## Aparência 
-![Logo da Minha Aplicação]([https://github.com/guilherme](https://github.com/GuilhermePLeonel/Delivery-App/blob/main/image%20eu.png))
+![Logo da Minha Aplicação]([https://github.com/guilherme](https://github.com/GuilhermePLeonel/Delivery-App/image%20eu.png))
 ## Desenvolvimento e Equipe
 
 O desenvolvimento do projeto foi dividido em duas equipes:
