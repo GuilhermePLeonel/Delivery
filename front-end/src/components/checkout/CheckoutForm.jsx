@@ -2,11 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import {
-  // requestProducts,
-  requestSalesID,
-  requestUserData,
-} from "../../services/requests";
+import { requestSalesID, requestUserData } from "../../services/requests";
 
 function CheckoutForm({ cart }) {
   const [idSeller, setIdSeller] = useState("");

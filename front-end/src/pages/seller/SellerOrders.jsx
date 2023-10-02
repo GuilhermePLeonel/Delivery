@@ -18,8 +18,6 @@ function SellerOrders() {
     <>
       <SellerNavBar />
       <div class="sm:mx-4 mb-5 mt-40 sm:mt-40 md:mt-28">
-        {/* {console.log(customerOrder)} */}
-        {/* <h1 class="mb-10 p-2 font-semibold text-gray-700">PEDIDOS</h1> */}
         {customerOrder.map(({ id, userId, status }, index) => (
           <SellerOrderCard
             key={id}

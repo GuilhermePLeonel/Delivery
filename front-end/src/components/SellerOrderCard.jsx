@@ -5,20 +5,8 @@ import moment from "moment/moment";
 
 function SellerOrderCard({ saleId, order, status, saleDate, totalPrice }) {
   const navigate = useNavigate();
-  useEffect(() => {
-    // console.log(saleDate);
-    // console.log('CARD RODANDO');
-  }, []);
+  useEffect(() => {}, []);
 
-  // let statusOrder = "";
-
-  // if (status === "Preparando") {
-  //   statusOrder = "order-status-preparando";
-  // }
-
-  // if (status === "Entregue") {
-  //   statusOrder = "order-status-entregue";
-  // }
   const replaceValue = (string) => string.replace(".", ",");
 
   const handleDateOfSale = (date) => {

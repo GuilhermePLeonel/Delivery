@@ -19,7 +19,6 @@ function Orders() {
     <>
       <NavBar />
       <div class="mb-10 mt-40 sm:mt-40 md:mt-28">
-        {/* <h1 class="mb-10 p-2 font-bold text-gray-700">MEUS PEDIDOS</h1> */}
         {customerOrder.length > 0 ? (
           customerOrder.map(({ id, userId, status }, index) => (
             <div>

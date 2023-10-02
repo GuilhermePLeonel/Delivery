@@ -73,7 +73,6 @@ function Products() {
             }`}
           >
             <p class="w-full mt-1">{cartQuantiy}</p>
-            {/* <span class="animate-ping absolute inline-flex  h-full w-full rounded-full bg-zinc-700 opacity-75"></span> */}
           </span>
         </button>
         <div class="grid grid-cols-1 mx-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
