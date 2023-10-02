@@ -94,7 +94,6 @@ function CheckoutTable({ buttonOn, cart, setCart }) {
                 </tr>
               ))}
             </tbody>
-            {/* APAGAR ESSA CADEIA DE TFOOT CASO ALGUM REQUISITO DE ERRADO */}
             <tfoot>
               <tr>
                 <td colSpan={buttonOn ? 6 : 5}>

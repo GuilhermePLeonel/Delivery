@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment/moment";
-// import { useNavigate } from 'react-router-dom';
 import SellerNavBar from "../../components/SellerNavBar";
-// import NavBar from '../../components/NavBar';
-// import SellerOrderDetailsCard from '../../components/SellerOrderDetailsCard';
+
 import {
   requestSalesData,
   requestSalesProducts,
