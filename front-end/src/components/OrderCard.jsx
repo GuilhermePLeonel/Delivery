@@ -10,15 +10,15 @@ function OrderCard({ saleId, order, status, saleDate, totalPrice }) {
     // console.log('CARD RODANDO');
   }, []);
 
-  let statusOrder = "";
+  // let statusOrder = "";
 
-  if (status === "Preparando") {
-    statusOrder = "bg-yellow-500";
-  }
+  // if (status === "Preparando") {
+  //   statusOrder = "bg-yellow-500";
+  // }
 
-  if (status === "Entregue") {
-    statusOrder = "bg-green-500";
-  }
+  // if (status === "Entregue") {
+  //   statusOrder = "bg-green-500";
+  // }
 
   const replaceValue = (string) => string.replace(".", ",");
 
