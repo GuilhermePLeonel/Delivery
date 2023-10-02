@@ -36,6 +36,10 @@ function Orders() {
         ) : (
           <h1 class="p-10 text-center font-semibold text-gray-700">
             VOCÊ NÃO TEM PEDIDOS AINDA
+            <p class="p-5 text-red-600">
+              Adcione produtos ao carrinho e finalize a compra para visualizar
+              seus pedidos! ^^
+            </p>
           </h1>
         )}
       </div>
