@@ -156,4 +156,85 @@ describe("Login Component", () => {
       ).toBeInTheDocument();
     });
   });
+  it("Habilita ou desabilita o botão de login conforme os campos preenchidos", async () => {
+    render(
+      <Router>
+        <Login />
+      </Router>
+    );
+
+    const emailInput = screen.getByTestId("common_login__input-email");
+    const passwordInput = screen.getByTestId("common_login__input-password");
+    const loginButton = screen.getByTestId("common_login__button-login");
+
+    expect(loginButton).toBeDisabled();
+
+    fireEvent.change(emailInput, { target: { value: "test@example.com" } });
+    fireEvent.change(passwordInput, { target: { value: "password123" } });
+
+    expect(loginButton).not.toBeDisabled();
+  });
+
+  it("Altera a rota após um login bem-sucedido", async () => {
+    const mockSellerUser = {
+      email: "fulana@deliveryapp.com",
+      name: "Fulana Pereira",
+      role: "seller",
+      token: "3c28d2b0881bf46457a853e0b07531c6",
+    };
+
+    requestLogin.mockResolvedValue(mockSellerUser);
+
+    render(
+      <Router>
+        <Login />
+      </Router>
+    );
+
+    const emailInput = screen.getByTestId("common_login__input-email");
+    const passwordInput = screen.getByTestId("common_login__input-password");
+    const loginButton = screen.getByTestId("common_login__button-login");
+
+    fireEvent.change(emailInput, { target: { value: mockSellerUser.email } });
+    fireEvent.change(passwordInput, { target: { value: "fulana@123" } });
+    fireEvent.click(loginButton);
+
+    await waitFor(() => {
+      expect(window.location.pathname).toBe("/seller/orders");
+    });
+  });
+
+  it("Teste de responsividade em desktop e mobile", () => {
+    render(
+      <Router>
+        <Login />
+      </Router>
+    );
+
+    const emailInput = screen.getByTestId("common_login__input-email");
+    const passwordInput = screen.getByTestId("common_login__input-password");
+    const loginButton = screen.getByTestId("common_login__button-login");
+    const registerButton = screen.getByTestId("common_login__button-register");
+
+    expect(emailInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
+    expect(loginButton).toBeInTheDocument();
+    expect(registerButton).toBeInTheDocument();
+
+    window.innerWidth = 360;
+    window.dispatchEvent(new Event("resize"));
+
+    expect(emailInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
+    expect(loginButton).toBeInTheDocument();
+    expect(registerButton).toBeInTheDocument();
+
+    window.innerWidth = 1024;
+    window.dispatchEvent(new Event("resize"));
+
+    expect(emailInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
+    expect(loginButton).toBeInTheDocument();
+    expect(registerButton).toBeInTheDocument();
+  });
 });

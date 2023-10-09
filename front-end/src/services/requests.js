@@ -18,12 +18,25 @@ export const requestLogin = async (email, password) => {
 };
 
 export const requestCreate = async (body) => {
-  let data;
   try {
-    data = await axios.post("http://localhost:3001/register", body);
-    return data;
+    const response = await axios.post("http://localhost:3001/register", body);
+    return { data: response.data, status: response.status };
   } catch (error) {
-    return { data, message: "usuario cadastrado", status: 409 };
+    if (error.response) {
+      return {
+        data: error.response.data,
+        status: error.response.status,
+        message: "Erro na requisição",
+      };
+    } else if (error.request) {
+      return { data: null, status: 0, message: "Sem resposta do servidor" };
+    } else {
+      return {
+        data: null,
+        status: 0,
+        message: "Erro na configuração da requisição",
+      };
+    }
   }
 };
 

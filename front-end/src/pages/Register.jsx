@@ -42,23 +42,28 @@ function Register() {
 
   const register = async () => {
     const success = 201;
-    const { data, status } = await requestCreate({ name, email, password });
-
+    const { error, data, status } = await requestCreate({
+      name,
+      email,
+      password,
+    });
+    console.log(error, data, status);
     if (status === success) {
-      const dezmil = 1000;
+      const mil = 1000;
       localStorage.setItem("user", JSON.stringify({ ...data }));
       setTimeout(async () => {
         navigate("/customer/products");
-      }, dezmil);
+      }, mil);
       return null;
+    } else {
+      setBadRegister(true);
     }
-    setBadRegister(true);
   };
 
   const invalidRegisterMessage = (
     <p
       data-testid="common_register__element-invalid_register"
-      className="text-red-600"
+      className="text-red-600 mx-auto text-center"
     >
       Dados inválidos
     </p>
@@ -68,7 +73,7 @@ function Register() {
     <main className="absolute m-0 p-0 h-full w-full flex flex-col">
       <header>
         <img
-          class="mx-auto h-14 w-auto mt-4 "
+          className="mx-auto h-14 w-auto mt-4 "
           src="https://asset.brandfetch.io/idLUjftGpE/id3ssWp9D3.png?updated=1674220249738"
           alt="logo"
         ></img>
@@ -135,6 +140,7 @@ function Register() {
           >
             Voltar
           </button>
+          {console.log(badRegister)}
           {badRegister && invalidRegisterMessage}
         </form>
       </section>
