@@ -9,7 +9,7 @@
   "engineStrict": true,
   "private": true,
   "scripts": {
-    "vercel-build": "sequelize-cli db:migrate",
+    "vercel-build": "npx sequelize-cli db:migrate deploy",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "start": "node .",
     "dev": "nodemon .",
