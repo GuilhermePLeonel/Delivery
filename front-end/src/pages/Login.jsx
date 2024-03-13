@@ -55,7 +55,7 @@ function Login() {
   }, [email, password]);
 
   return (
-    <main className="absolute mt-8 m-0 p-0 h-full w-full flex flex-col">
+    <main className="absolute m-0 p-0 h-full w-full flex flex-col">
       <img
         className="mx-auto h-20 w-auto mt-4"
         src={require("../images/LOGO.png")}

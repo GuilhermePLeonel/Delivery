@@ -73,8 +73,8 @@ function Register() {
     <main className="absolute m-0 p-0 h-full w-full flex flex-col">
       <header>
         <img
-          className="mx-auto h-14 w-auto mt-4 "
-          src="https://asset.brandfetch.io/idLUjftGpE/id3ssWp9D3.png?updated=1674220249738"
+          className="mx-auto h-20 w-auto mt-4"
+          src={require("../images/LOGO.png")}
           alt="logo"
         ></img>
       </header>
