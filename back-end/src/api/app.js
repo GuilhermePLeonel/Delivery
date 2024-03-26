@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 const cors = require("cors");
 const routes = require("../routers/index");
 
@@ -10,3 +10,4 @@ app.get("/", (_req, res) => res.status(418).end());
 app.use(routes);
 
 module.exports = app;
+ */
