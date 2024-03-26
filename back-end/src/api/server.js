@@ -1,12 +1,12 @@
-require("dotenv").config();
+/* require("dotenv").config();
 
 const port = process.env.PORT;
 const app = require("./app");
 
 app.listen(port);
-console.log(`Api rodando na porta ${port}`);
+console.log(`Api rodando na porta ${port}`); */
 
-/* require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const port = process.env.PORT || 3001;
@@ -20,4 +20,4 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port);
-console.log(`Api rodando na porta ${port}`); */
+console.log(`Api rodando na porta ${port}`);
