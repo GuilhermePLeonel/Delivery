@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const environment = process.env.NODE_ENV; /* || "production" */
+const environment = process.env.NODE_ENV;
 
 const suffix = {
   prod: "",
@@ -11,13 +11,11 @@ const suffix = {
 };
 
 const options = {
-  host: process.env.HOSTNAME /* "localhost" */,
-  port: process.env.POSTGRES_PORT /* || "5432" */,
-  database: `${process.env.POSTGRES_DB_NAME /*||  "app-delivery" */}${
-    suffix[environment]
-  }`,
-  username: process.env.POSTGRES_USER /* || "guilherme" */,
-  password: process.env.POSTGRES_PASSWORD /*  || "password" */,
+  host: process.env.HOSTNAME,
+  port: process.env.POSTGRES_PORT,
+  database: `${process.env.POSTGRES_DB_NAME}${suffix[environment]}`,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
   dialect: "postgres",
   dialectOptions: {
     timezone: "Z",
