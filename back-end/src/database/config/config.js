@@ -9,7 +9,7 @@ const suffix = {
   development: "-dev",
   test: "-test",
 };
-
+// comment test
 const options = {
   host:  "localhost",
   port: process.env.MYSQL_PORT || "5432",
@@ -18,7 +18,7 @@ const options = {
   }`,
   username: process.env.MYSQL_USER || "root",
   password: process.env.MYSQL_PASSWORD || "root",
-  dialect: "postgres",
+  dialect: "postgres", 
   dialectOptions: {
     timezone: "Z",
   },
