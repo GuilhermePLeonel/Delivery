@@ -9,7 +9,7 @@ const suffix = {
   development: "-dev",
   test: "-test",
 };
-// comment 
+
 const options = {
   host:  "localhost",
   port: process.env.MYSQL_PORT || "5432",
